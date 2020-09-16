@@ -5,4 +5,8 @@ twitter-scraping-dev.ipynb
 
 /data/Archive
 
-data/IL_full.csv
+data/NJ_full.csv
+
+data/reopening_data/Archive
+
+data/shutdown_data/NJ_full_shutdown.csv
