@@ -45,7 +45,7 @@ All of the data sources referenced throughout the notebooks lead up to one large
 |neu_score.       | Percentage of how neutral a text block was.
 |compound_score   | The combined score for positive, negative and neutral scores, scored from -1 to 1.
 
-Our second data dictionary comes from [The Covid Tracking Project](https://covidtracking.com/data/api), which aggregates Covid data from a variety of sources including the CDC and state government sites. The api is frequently updated and some features are deprecated, we felt it important to include all of these to see how difficult it is to accurately represent Covid dat
+Our second data dictionary comes from [The Covid Tracking Project](https://covidtracking.com/data/api), which aggregates Covid data from a variety of sources including the CDC and state government sites. The api is frequently updated and some features are deprecated, we felt it important to include all of these to see how difficult it is to accurately collect data on Covid. The csv we used is located [here](./data/covid_data_per_state.csv)
 
 | Variable Name | Description |
 |----------------------	|--------------------------------------------------	|
