@@ -1,5 +1,7 @@
 # Project 5 : Covid-Sentiment-Analysis
 
+Project Team: Haley Taft, Irene Anibogwu, Steven Markoe, and Eric Heidbreder
+
 ## Problem Statement:
 
 As the Covid-19 pandemic continues to be the topic of conversation across all dinner tables and of course TV screens in the United States, general sentiment regarding COVID-19 announcements have become a point of interest.
@@ -12,6 +14,9 @@ These states include but are not limited to:
 - Click the links below to access different parts of our project.
 
 ## Data Dictionary:
+
+All of the data sources referenced throughout the notebooks lead up to one large csv called `all_states_and_dates_sentiment.csv`, this is not included in the repo because it's about 1 GB in size, but can be rebuilt using `06_combining_data.ipynb` if you'd like to access that csv.
+
 | Variable Name | Description |
 |-----------------------------------------------------------------------------------------	|------------------------------	|
 |username         | The username of the person who posted tweet.                                                               
@@ -42,12 +47,14 @@ These states include but are not limited to:
 |neu_score.       | Percentage of how neutral a text block was.
 |compound_score   | The combined score for positive, negative and neutral scores, scored from -1 to 1.
 
+Our second data dictionary comes from [The Covid Tracking Project](https://covidtracking.com/data/api), which aggregates Covid data from a variety of sources including the CDC and state government sites. The api is frequently updated and some features are deprecated, we felt it important to include all of these to see how difficult it is to accurately collect data on Covid. The csv we used is located [here](./data/covid_data_per_state.csv)
+
 | Variable Name | Description |
 |----------------------	|--------------------------------------------------	|
 |date                     | Date on which data was collected by The COVID Tracking Project.
 |dateChecked              | Deprecated. This is an old label for lastUpdateEt.
 |death                    | Deaths (confirmed and probable) - Total fatalities with confirmed OR probable COVID-19 case diagnosis (per the expanded CSTE case definition of April 5th, 2020 approved by the CDC). In states where the information is available, it only tracks fatalities with confirmed OR probable COVID-19 case diagnosis where on the death certificate, COVID-19 is listed as an underlying cause of death according to WHO guidelines.
-|deathIncrease            | New deaths - Daily increase in death, calculated from the previous day's value. 
+|deathIncrease            | New deaths - Daily increase in death, calculated from the previous day's value.
 |hash                     |A hash for this record
 |hospitalized             | Deprecated. Old label for hospitalizedCumulative.
 |hospitalizedCumulative   | Cumulative hospitalized/Ever hospitalized - Total number of individuals who have ever been hospitalized with COVID-19. Definitions vary by state / territory. Where possible, we report hospitalizations with confirmed or probable COVID-19 cases per the expanded CSTE case definition of April 5th, 2020 approved by the CDC.
@@ -141,6 +148,8 @@ Scraping Twitter meant deciding which terms to include in our state queries.  Wh
 - The reopening date had more negative sentiment as compared to the shutdown date
 - Between Midnight - 4am, tweets tend to have a higher absolute value for a compound score.
 
+Also, check out our [Tableau Dashboard](https://public.tableau.com/profile/steven.markoe#!/vizhome/ClientProject_16003790542760/Dashboard1) made by Steven Markoe, showcasing our results
+
 
 ## Next Steps:
 
@@ -154,5 +163,99 @@ Scraping Twitter meant deciding which terms to include in our state queries.  Wh
     - https://www.mercurynews.com/2014/08/26/highly-opinionated-people-are-social-media-minority-study-finds/
 
     - https://www.pewresearch.org/internet/2019/04/24/sizing-up-twitter-users/
+
+## Directory Tree
+
+```
+│   .gitignore
+│   01_twitter-scraping.ipynb
+│   02_cleaning.ipynb
+│   03_state_twitter_eda.ipynb
+│   04_covid_data.ipynb
+│   05_sentiment_analysis.ipynb
+│   06_combining_data.ipynb
+│   07_conclusions.ipynb
+|   presentation.pdf 
+│   README.md
+│
+├───data
+│   │   .DS_Store
+│   │   covid_data_per_state.csv
+│   │   top_words_cvec_il.csv
+│   │
+│   │
+│   ├───Archive
+│   │   └───.ipynb_checkpoints
+│   │           GA_full-checkpoint.csv
+│   │           IL_full-checkpoint.csv
+│   │
+│   ├───reopening_data
+│   │      FL_full_reopen.csv
+│   │      GA_full_reopen.csv
+│   │      IL_full_reopen.csv
+│   │      TX_full_reopen.csv
+│   │
+│   ├───sentiment_data
+│   │   │   FL_reopen_sentiment.csv
+│   │   │   FL_shutdown_sentiment.csv
+│   │   │   GA_reopen_sentiment.csv
+│   │   │   GA_shutdown_sentiment.csv
+│   │   │   IL_reopen_sentiment.csv
+│   │   │   IL_shutdown_sentiment.csv
+│   │   │   MI_reopen_sentiment.csv
+│   │   │   MI_shutdown_sentiment.csv
+│   │   │   NJ_reopen_sentiment.csv
+│   │   │   NJ_shutdown_sentiment.csv
+│   │   │   NY_reopen_sentiment.csv
+│   │   │   NY_shutdown_sentiment.csv
+│   │   │   OH_reopen_sentiment.csv
+│   │   │   OH_shutdown_sentiment.csv
+│   │   │   TX_reopen_sentiment.csv
+│   │   │   TX_shutdown_sentiment.csv
+│   │   │
+│   │   │
+│   │   └───ordered
+│   │       │   FL_reopen_sentiment_ordered.csv
+│   │       │   FL_shutdown_sentiment_ordered.csv
+│   │       │   GA_reopen_sentiment_ordered.csv
+│   │       │   GA_shutdown_sentiment_ordered.csv
+│   │       │   IL_reopen_sentiment_ordered.csv
+│   │       │   IL_shutdown_sentiment_ordered.csv
+│   │       │   MI_reopen_sentiment_ordered.csv
+│   │       │   MI_shutdown_sentiment_ordered.csv
+│   │       │   NJ_reopen_sentiment_ordered.csv
+│   │       │   NJ_shutdown_sentiment_ordered.csv
+│   │       │   NY_reopen_sentiment_ordered.csv
+│   │       │   NY_shutdown_sentiment_ordered.csv
+│   │       │   OH_reopen_sentiment_ordered.csv
+│   │       │   OH_shutdown_sentiment_ordered.csv
+│   │       │   TX_reopen_sentiment_ordered.csv
+│   │       │   TX_shutdown_sentiment_ordered.csv
+│   │       │
+│   │       │
+│   │       └───combined
+│   │              all_states_and_dates_sentiment.csv
+│   │              cleaning_large_set.ipynb
+│   │              num_tweets_per_state.csv
+│   │
+│   └───shutdown_data
+│          GA_full_shutdown.csv
+│          IL_full_shutdown.csv
+│          NJ_full_shutdown.csv
+│          TX_full_ignore.csv
+│          TX_full_shutdown.csv
+│
+└───images
+       GA_sentiment_reopen.png
+       GA_sentiment_shutdown.png
+       IL_sentiment_reopen.png
+       IL_sentiment_shutdown.png
+       top_bottom_cities_GA.png
+       top_bottom_cities_IL.png
+       tweets_per_day_GA_reopen.png
+       tweets_per_day_GA_shutdown.png
+       tweets_per_day_IL_reopen.png
+       tweets_per_day_IL_shutdown.png
+```
 
 Thank you!
