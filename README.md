@@ -1,5 +1,7 @@
 # Project 5 : Covid-Sentiment-Analysis
 
+Project Team: Haley Taft, Irene Anibogwu, Steven Markoe, and Eric Heidbreder
+
 ## Problem Statement:
 
 As the Covid-19 pandemic continues to be the topic of conversation across all dinner tables and of course TV screens in the United States, general sentiment regarding COVID-19 announcements have become a point of interest.
@@ -52,7 +54,7 @@ Our second data dictionary comes from [The Covid Tracking Project](https://covid
 |date                     | Date on which data was collected by The COVID Tracking Project.
 |dateChecked              | Deprecated. This is an old label for lastUpdateEt.
 |death                    | Deaths (confirmed and probable) - Total fatalities with confirmed OR probable COVID-19 case diagnosis (per the expanded CSTE case definition of April 5th, 2020 approved by the CDC). In states where the information is available, it only tracks fatalities with confirmed OR probable COVID-19 case diagnosis where on the death certificate, COVID-19 is listed as an underlying cause of death according to WHO guidelines.
-|deathIncrease            | New deaths - Daily increase in death, calculated from the previous day's value. 
+|deathIncrease            | New deaths - Daily increase in death, calculated from the previous day's value.
 |hash                     |A hash for this record
 |hospitalized             | Deprecated. Old label for hospitalizedCumulative.
 |hospitalizedCumulative   | Cumulative hospitalized/Ever hospitalized - Total number of individuals who have ever been hospitalized with COVID-19. Definitions vary by state / territory. Where possible, we report hospitalizations with confirmed or probable COVID-19 cases per the expanded CSTE case definition of April 5th, 2020 approved by the CDC.
@@ -146,6 +148,8 @@ Scraping Twitter meant deciding which terms to include in our state queries.  Wh
 - The reopening date had more negative sentiment as compared to the shutdown date
 - Between Midnight - 4am, tweets tend to have a higher absolute value for a compound score.
 
+Also, check out our [Tableau Dashboard](https://public.tableau.com/profile/steven.markoe#!/vizhome/ClientProject_16003790542760/Dashboard1) made by Steven Markoe, showcasing our results
+
 
 ## Next Steps:
 
@@ -159,7 +163,7 @@ Scraping Twitter meant deciding which terms to include in our state queries.  Wh
     - https://www.mercurynews.com/2014/08/26/highly-opinionated-people-are-social-media-minority-study-finds/
 
     - https://www.pewresearch.org/internet/2019/04/24/sizing-up-twitter-users/
-    
+
 ## Directory Tree
 
 ```
@@ -171,6 +175,7 @@ Scraping Twitter meant deciding which terms to include in our state queries.  Wh
 │   05_sentiment_analysis.ipynb
 │   06_combining_data.ipynb
 │   07_conclusions.ipynb
+|   presentation.pdf 
 │   README.md
 │
 ├───data
