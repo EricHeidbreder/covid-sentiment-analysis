@@ -19,6 +19,42 @@ These states include but are not limited to:
 
 - Our cleaning process focused on dropping duplicates, reformatting date/time columns (as these were imparative for our analysis) and removing cities with irrelevant data.  
 
+## Data Dictionary
+
+All of the data sources referenced throughout the notebooks lead up to one large csv called `all_states_and_dates_sentiment.csv`, this is not included in the repo because it's about 1 GB in size, but can be rebuilt using `06_combining_data.ipynb` if you'd like to access that csv.
+
+### Data from scraped tweets (`all_states_and_dates_sentiment.csv`):
+
+| Variable Name | Description |
+|-----------------------------------------------------------------------------------------	|------------------------------	|
+|`username`         | The username of the person who posted tweet.                                                               
+|`to               `| The names of other users the tweet was directed to (blank if no one was mentioned).
+|`text             `| The text included in tweet.
+|`retweets         `| If the post was created by someone else and then reposted by the user.
+|`favorites        `| If someone favorited this tweet.
+|`replies          `| If there were replies to this tweet by other users.
+|`id               `| The number id for the tweet.
+|`permalink        `| Link to the specific post.
+|`author_id        `| The number id for the user.
+|`date             `| The date the tweet was posted.
+|`hashtags         `| Hashtags included in tweet (if any).
+|`mentions         `| The username of other users that are included in the text.
+|`geo              `| These values were all blank because Twitter doesn't share this anymore, but it would be the user's location.
+|`urls             `| Links included in text.
+|`city             `| City the text was scraped in reference to.
+|`query            `| Search words/terms used to find and scrape this text.
+|`date_range       `| Range of dates used in scraping that this text was a part of.
+|`state            `| The state corresponding to the location of scraping.
+|`month            `| The month for which this text was posted.
+|`day              `| The day for which this text was posted.
+|`month_day_hour   `| Date of tweet in a specific date-time format used in analysis but the date and time the tweet was posted.
+|`is_reopen        `| A Boolean value for whether this text comes from the reopening scraping timeframe or shutdown scraping time frame.
+|`sentiment_analysis` | The four scores provided from VADER about the sentiment of the text 
+|`neg_score        `| Percentage of how negative a text block was.
+|`pos_score        `| Percentage of how positive a text block was.
+|`neu_score.       `| Percentage of how neutral a text block was.
+|`compound_score   `| The combined score for positive, negative and neutral scores, scored from -1 to 1. 
+
 ## Feature Selection:
 
 Scraping Twitter meant deciding which terms to include in our state queries.  While we did not want to rely solely on tweets mentioning Covid-19 to measure general statewide sentiment, we did not want to model the noise by including too many unremarkable opinions. Adding terms that indicated a baseline involvement in current affairs (e.g. Lansing or Whitmer for Michigan) allowed us to gather more insightful and needle-moving tweets.
