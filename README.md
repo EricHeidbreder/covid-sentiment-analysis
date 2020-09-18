@@ -42,6 +42,36 @@ These states include but are not limited to:
 |neu_score.       | Percentage of how neutral a text block was.
 |compound_score   | The combined score for positive, negative and neutral scores, scored from -1 to 1.
 
+| Variable Name | Description |
+|----------------------	|--------------------------------------------------	|
+|date                     | Date on which data was collected by The COVID Tracking Project.
+|dateChecked              | Deprecated. This is an old label for lastUpdateEt.
+|death                    | Deaths (confirmed and probable) - Total fatalities with confirmed OR probable COVID-19 case diagnosis (per the expanded CSTE case definition of April 5th, 2020 approved by the CDC). In states where the information is available, it only tracks fatalities with confirmed OR probable COVID-19 case diagnosis where on the death certificate, COVID-19 is listed as an underlying cause of death according to WHO guidelines.
+|deathIncrease            | New deaths - Daily increase in death, calculated from the previous day's value. 
+|hash                     |A hash for this record
+|hospitalized             | Deprecated. Old label for hospitalizedCumulative.
+|hospitalizedCumulative   | Cumulative hospitalized/Ever hospitalized - Total number of individuals who have ever been hospitalized with COVID-19. Definitions vary by state / territory. Where possible, we report hospitalizations with confirmed or probable COVID-19 cases per the expanded CSTE case definition of April 5th, 2020 approved by the CDC.
+|hospitalizedCurrently  | Currently hospitalized/Now hospitalized - Individuals who are currently hospitalized with COVID-19. Definitions vary by state / territory. Where possible, we report hospitalizations with confirmed or probable COVID-19 cases per the expanded CSTE case definition of April 5th, 2020 approved by the CDC.
+|hospitalizedIncrease     | New total hospitalizations - Daily increase in hospitalizedCumulative, calculated from the previous day's value.
+|inIcuCumulative          | Cumulative in ICU/Ever in ICU - Total number of individuals who have ever been hospitalized in the Intensive Care Unit with COVID-19. Definitions vary by state / territory. Where possible, we report patients in the ICU with confirmed or probable COVID-19 cases per the expanded CSTE case definition of April 5th, 2020 approved by the CDC.
+|inIcuCurrently           | Currently in ICU/Now in ICU - Individuals who are currently hospitalized in the Intensive Care Unit with COVID-19. Definitions vary by state / territory. Where possible, we report patients in the ICU with confirmed or probable COVID-19 cases per the expanded CSTE case definition of April 5th, 2020 approved by the CDC.
+|lastModified             | Deprecated. Old label for lastUpdateET.
+|negative                 | Negative PCR tests (people) - Total number of unique people with a completed PCR test that returns negative. For states / territories that do not report this number directly, we compute it using one of several methods, depending on which data points the state provides. Due to complex reporting procedures, this number might be mixing units and therefore, at best, it should only be considered an estimate of the number of people with a completed PCR test that return negative.
+|negativeIncrease         | Increase in negative computed by subtracting the value of negative for the previous day from the value for negative from the current day.
+|onVentilatorCumulative   | Cumulative on ventilator/Ever on ventilator - Total number of individuals who have ever been hospitalized under advanced ventilation with COVID-19. Definitions vary by state / territory. Where possible, we report patients on ventilation with confirmed or probable COVID-19 cases per the expanded CSTE case definition of April 5th, 2020 approved by the CDC.
+|onVentilatorCurrently    | Currently on ventilator/Now on ventilator - Individuals who are currently hospitalized under advanced ventilation with COVID-19. Definitions vary by state / territory. Where possible, we report patients on ventilation with confirmed or probable COVID-19 cases per the expanded CSTE case definition of April 5th, 2020 approved by the CDC.
+|pending                  | Pending - Total number of viral tests that have not been completed as reported by the state or territory.
+|posNeg                   |Deprecated. Computed by adding positive and negative values.
+|positive                 | Cases (confirmed plus probable) - Total number of people with confirmed OR probable cases of COVID-19 reported by the state or territory (per the expanded CSTE case definition of April 5th, 2020 approved by the CDC). - A confirmed case is a person who has a positive test result from an FDA approved diagnostic molecular test. - A probable case is a person who has presentable symptoms WITH epidemiological evidence or has BOTH a positive presumptive laboratory test AND also EITHER presentable symptoms OR epidemiological evidence, or who has been issued a death certificate listing COVID-19 as a cause of death or significant contributing cause of death with no confirmatory testing. Epidemiological evidence refers either to close proximity contact with a known case or travel history to an area with high disease incidence. According to the guidelines, FDA approved antibody and antigen tests are considered presumptive laboratory evidence and therefore only one potential part of the evidence required to classify a case as probable.
+|positiveIncrease         | New cases - The daily increase in API field positive, which measures Cases (confirmed plus probable) calculated based on the previous day's value.
+|recovered                | Recovered - Total number of people that are identified as recovered from COVID-19. States provide very disparate definitions on what constitutes a "recovered" COVID-19 case. Types of "recovered" cases include those who are discharged from hospitals, released from isolation after meeting CDC guidance on symptoms cessation, or those who have not been identified as fatalities after a number of days (30 or more) post disease onset. Specifics vary for each state or territory.
+|states                   | States - Only available in national records. The number of states and territories included in the US dataset for this day.
+|total                    | Deprecated. Computed by adding positive, negative, and pending values.
+|totalTestResults         | Total test results - At the national level, this metric is a summary statistic which—because it sums figures from states reporting tests in test encounters with those reporting tests in specimens and in people—is an aggregate calculation of heterogeneous figures. Therefore, it should be contextualized as, at best, an estimate of national testing performance. - In most states, the totalTestResults field is currently computed by adding positive and negative values because, historically, some states do not report totals, and to work around different reporting cadences for cases and tests. In Colorado, North Dakota, and Rhode Island, where reliable testing encounters figures are available with a complete time series, we directly report those figures in this field. In Massachusetts, where reliable specimens figures are available with a complete time series, we directly report those figures in this field. We are in the process of switching all states over to use directly reported total figures, using a policy of preferring testing encounters, specimens, and people, in that order.
+|totalTestResultsIncrease | New tests - Daily increase in totalTestResults, calculated from the previous day's value. This calculation includes all the caveats associated with Total tests/totalTestResults, and we recommend against using it at the state/territory level.
+|positivity_rate          | Calculated by us by dividing the values for each row in the 'positive' variable by the values in each corresponding row from the 'total test results' variable. (Not included in original dataframe.)
+
+
 ## Data Collection and Cleaning:
 
 - Our primary method of data collection was though Twitter. Using a python package called GetOldTweets3, we were able to scrape old tweets from Twitter without needing any API keys.
@@ -79,7 +109,7 @@ Scraping Twitter meant deciding which terms to include in our state queries.  Wh
 
 ![image](./images/IL_sentiment_shutdown.png)
 
-![image](./data/images/IL_sentiment_reopen.png)
+![image](./images/IL_sentiment_reopen.png)
 
 
 
@@ -91,7 +121,7 @@ Scraping Twitter meant deciding which terms to include in our state queries.  Wh
     - A lot of data these days comes in the form of text and the way people express themselves through text varies
     - The animated processes for gaging sentiment are useful however, it can be quite difficult to analyze figurative language since the meaning/opinion behind the text is usually the opposite of what the text is saying
 
-      - Example: Someone sarcastically says, “I am having a GREAT day!” when they actually are having the opposite. Computers would not be able to interpret this correctly
+   - Example: Someone sarcastically says, “I am having a GREAT day!” when they actually are having the opposite. Computers would not be able to interpret this correctly.
 
 **Here's where VADER comes in!**
 - VADER which stands for **(Valence Aware Dictionary and sEntiment Reasoner)** is a lexicon and rule-based sentiment analysis tool that is used to analyze sentiments expressed on social media.
