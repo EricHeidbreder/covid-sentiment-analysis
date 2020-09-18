@@ -11,8 +11,13 @@ data/reopening_data/Archive
 
 data/shutdown_data/NJ_full_shutdown.csv
 
-<<<<<<< HEAD
 data/sentiment_data/combined/
-=======
-data/sentiment_data/combined/
->>>>>>> 604a056a4f14d7c59038ff179917abe245fbd7e6
+
+data/sentiment_data/NJ_shutdown_sentiment
+
+data/sentiment_data/NY_shutdown_sentiment
+
+data/sentiment_data/ordered/
+
+data/sentiment_data/NJ_shutdown_sentiment.csv
+data/sentiment_data/NY_shutdown_sentiment.csv
