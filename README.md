@@ -31,21 +31,21 @@ Scraping Twitter meant deciding which terms to include in our state queries.  Wh
 
 ***- Major cities tended to tweet substantially more than other locations.***
 
-![image](./data/images/tweets_per_day_GA_reopen.png)
+![image](./images/tweets_per_day_GA_reopen.png)
 
-![image](./data/images/tweets_per_day_IL_shutdown.png)
+![image](./images/tweets_per_day_IL_shutdown.png)
 
-![image](./data/images/tweets_per_day_IL_reopen.png)
+![image](./images/tweets_per_day_IL_reopen.png)
 
-![image](./data/images/top_bottom_cities_GA.png)
+![image](./images/top_bottom_cities_GA.png)
 
-![image](./data/images/top_bottom_cities_IL.png)
+![image](./images/top_bottom_cities_IL.png)
 
-![image](./data/images/GA_sentiment_shutdown.png)
+![image](./images/GA_sentiment_shutdown.png)
 
-![image](./data/images/GA_sentiment_reopen.png)
+![image](./images/GA_sentiment_reopen.png)
 
-![image](./data/images/IL_sentiment_shutdown.png)
+![image](./images/IL_sentiment_shutdown.png)
 
 
 
