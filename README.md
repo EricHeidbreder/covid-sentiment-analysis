@@ -79,7 +79,7 @@ Scraping Twitter meant deciding which terms to include in our state queries.  Wh
 
 ![image](./images/IL_sentiment_shutdown.png)
 
-![image](./data/images/IL_sentiment_reopen.png)
+![image](./images/IL_sentiment_reopen.png)
 
 
 
