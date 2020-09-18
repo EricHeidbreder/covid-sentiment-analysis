@@ -25,3 +25,9 @@ data/sentiment_data/ordered/combined/num_tweets_per_state.csv
 data/sentiment_data/ordered/NJ_shutdown_sentiment_ordered.csv
 
 data/sentiment_data/ordered/NY_shutdown_sentiment_ordered.csv
+
+data/.DS_Store
+
+data/shutdown_data/.DS_Store
+
+.DS_Store

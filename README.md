@@ -159,5 +159,99 @@ Scraping Twitter meant deciding which terms to include in our state queries.  Wh
     - https://www.mercurynews.com/2014/08/26/highly-opinionated-people-are-social-media-minority-study-finds/
 
     - https://www.pewresearch.org/internet/2019/04/24/sizing-up-twitter-users/
+    
+## Directory Tree
+
+```
+│   .gitignore
+│   01_twitter-scraping.ipynb
+│   02_cleaning.ipynb
+│   03_state_twitter_eda.ipynb
+│   04_covid_data.ipynb
+│   05_sentiment_analysis.ipynb
+│   06_combining_data.ipynb
+│   06_sentiment_analysis-fl.ipynb
+│   07_conclusions.ipynb
+│   README.md
+│
+├───data
+│   │   .DS_Store
+│   │   covid_data_per_state.csv
+│   │   top_words_cvec_il.csv
+│   │
+│   │
+│   ├───Archive
+│   │   └───.ipynb_checkpoints
+│   │           GA_full-checkpoint.csv
+│   │           IL_full-checkpoint.csv
+│   │
+│   ├───reopening_data
+│   │      FL_full_reopen.csv
+│   │      GA_full_reopen.csv
+│   │      IL_full_reopen.csv
+│   │      TX_full_reopen.csv
+│   │
+│   ├───sentiment_data
+│   │   │   FL_reopen_sentiment.csv
+│   │   │   FL_shutdown_sentiment.csv
+│   │   │   GA_reopen_sentiment.csv
+│   │   │   GA_shutdown_sentiment.csv
+│   │   │   IL_reopen_sentiment.csv
+│   │   │   IL_shutdown_sentiment.csv
+│   │   │   MI_reopen_sentiment.csv
+│   │   │   MI_shutdown_sentiment.csv
+│   │   │   NJ_reopen_sentiment.csv
+│   │   │   NJ_shutdown_sentiment.csv
+│   │   │   NY_reopen_sentiment.csv
+│   │   │   NY_shutdown_sentiment.csv
+│   │   │   OH_reopen_sentiment.csv
+│   │   │   OH_shutdown_sentiment.csv
+│   │   │   TX_reopen_sentiment.csv
+│   │   │   TX_shutdown_sentiment.csv
+│   │   │
+│   │   │
+│   │   └───ordered
+│   │       │   FL_reopen_sentiment_ordered.csv
+│   │       │   FL_shutdown_sentiment_ordered.csv
+│   │       │   GA_reopen_sentiment_ordered.csv
+│   │       │   GA_shutdown_sentiment_ordered.csv
+│   │       │   IL_reopen_sentiment_ordered.csv
+│   │       │   IL_shutdown_sentiment_ordered.csv
+│   │       │   MI_reopen_sentiment_ordered.csv
+│   │       │   MI_shutdown_sentiment_ordered.csv
+│   │       │   NJ_reopen_sentiment_ordered.csv
+│   │       │   NJ_shutdown_sentiment_ordered.csv
+│   │       │   NY_reopen_sentiment_ordered.csv
+│   │       │   NY_shutdown_sentiment_ordered.csv
+│   │       │   OH_reopen_sentiment_ordered.csv
+│   │       │   OH_shutdown_sentiment_ordered.csv
+│   │       │   TX_reopen_sentiment_ordered.csv
+│   │       │   TX_shutdown_sentiment_ordered.csv
+│   │       │
+│   │       │
+│   │       └───combined
+│   │              all_states_and_dates_sentiment.csv
+│   │              cleaning_large_set.ipynb
+│   │              num_tweets_per_state.csv
+│   │
+│   └───shutdown_data
+│          GA_full_shutdown.csv
+│          IL_full_shutdown.csv
+│          NJ_full_shutdown.csv
+│          TX_full_ignore.csv
+│          TX_full_shutdown.csv
+│
+└───images
+       GA_sentiment_reopen.png
+       GA_sentiment_shutdown.png
+       IL_sentiment_reopen.png
+       IL_sentiment_shutdown.png
+       top_bottom_cities_GA.png
+       top_bottom_cities_IL.png
+       tweets_per_day_GA_reopen.png
+       tweets_per_day_GA_shutdown.png
+       tweets_per_day_IL_reopen.png
+       tweets_per_day_IL_shutdown.png
+```
 
 Thank you!
