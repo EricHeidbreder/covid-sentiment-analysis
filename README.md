@@ -170,7 +170,6 @@ Scraping Twitter meant deciding which terms to include in our state queries.  Wh
 │   04_covid_data.ipynb
 │   05_sentiment_analysis.ipynb
 │   06_combining_data.ipynb
-│   06_sentiment_analysis-fl.ipynb
 │   07_conclusions.ipynb
 │   README.md
 │
