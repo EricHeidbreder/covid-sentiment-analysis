@@ -11,13 +11,17 @@ data/reopening_data/Archive
 
 data/shutdown_data/NJ_full_shutdown.csv
 
-data/sentiment_data/combined/
+data/sentiment_data/ordered/combined/
 
 data/sentiment_data/NJ_shutdown_sentiment
 
 data/sentiment_data/NY_shutdown_sentiment
 
-data/sentiment_data/ordered/
-
 data/sentiment_data/NJ_shutdown_sentiment.csv
 data/sentiment_data/NY_shutdown_sentiment.csv
+
+data/sentiment_data/ordered/combined/num_tweets_per_state.csv
+
+data/sentiment_data/ordered/NJ_shutdown_sentiment_ordered.csv
+
+data/sentiment_data/ordered/NY_shutdown_sentiment_ordered.csv
